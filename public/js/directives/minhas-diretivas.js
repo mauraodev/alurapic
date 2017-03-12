@@ -37,7 +37,7 @@ angular.module('minhasDiretivas', [])
             acao: '&'
         };
 
-        ddo.template = '<button class="btn btn-danger btn-block" ng-click="acao()">{{nome}}</button>';
+        ddo.template = '<button class="btn btn-danger btn-block btn-xs" ng-click="acao()">{{nome}}</button>';
 
         return ddo;
     });
