@@ -20,6 +20,7 @@ angular.module('alurapic')
                 .then(function(dados) {
                     $scope.mensagem = dados.mensagem;
                     if (dados.inclusao) $scope.foto = {};
+                    $scope.focado = true;
                 })
                 .catch(function(erro) {
                     $scope.mensagem = erro.mensagem;
