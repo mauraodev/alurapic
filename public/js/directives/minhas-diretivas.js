@@ -51,13 +51,23 @@ angular.module('minhasDiretivas', [])
         };
 
         ddo.link = function(scope, element) {
-            scope.$watch('focado', function() {
+            scope.$on('fotoCadastrada', function() {
+                element[0].focus();
+            });
+        };
 
-                if (scope.focado) {
-                    element[0].focus();
-                    scope.focado = false;
-                }
+        return ddo;
+    }).
+    directive('meusTitulos', function() {
+        var ddo = {};
 
+        ddo.restrict = 'AE';
+        ddo.template = '<ul><li np-repeat="titulo in titulos">{{titulo}}</li><ul>';
+        ddo.controller = function($scope, recursoFoto) {
+            recursoFoto.query(function(fotos) {
+                $scope.titulos = fotos.map(function(foto) {
+                    return foto.titulo;
+                });
             });
         };
 
