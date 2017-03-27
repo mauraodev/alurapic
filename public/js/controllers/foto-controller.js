@@ -6,7 +6,7 @@ angular.module('alurapic')
 
         if ($routeParams.fotoId) {
             recursoFoto.get({fotoId: $routeParams.fotoId}, function(foto) {
-                $scope.foto = foto; 
+                $scope.foto = foto;
             }, function(erro) {
                 console.log(erro);
                 $scope.mensagem = 'Não foi possível obter a foto'
